@@ -7,4 +7,7 @@ public class StatisticalAnalysis {
         this.iterator = iterator;
     }
 
+    public int countOf(Iterator<String> iterator) {
+        return iterator.fileContent.getWholeString().length();
+    }
 }
