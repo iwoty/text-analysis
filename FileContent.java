@@ -12,4 +12,14 @@ public class FileContent implements IterableText {
         this.filename = filename;
         this.fileContent = getFileContent(filename);
     }
+
+    public static String getFileContent(String filename) {
+        try {
+            String fileContent = new Scanner(new File(filename)).useDelimiter("\\Z").next();
+            return fileContent;
+        } catch (FileNotFoundException e) {
+            System.out.format("File %s not found\n", filename);
+        }
+        return null;
+    }
 }
