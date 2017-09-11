@@ -38,8 +38,4 @@ public class FileContent implements IterableText {
     public String getWholeString() {
         return this.fileContent;
     }
-
-    public static void main(String[] args) {
-        FileContent chuj = new FileContent("test.txt");
-    }
 }
