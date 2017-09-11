@@ -30,4 +30,8 @@ public class FileContent implements IterableText {
     public Iterator<String> wordIterator() {
         return new WordIterator(this);
     }
+
+    public String getFilename() {
+        return this.filename;
+    }
 }
