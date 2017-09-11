@@ -9,4 +9,11 @@ public class WordIterator implements Iterator {
         index = 0;
     }
 
+    public boolean hasNext() {
+        if (index < this.fileContent.getWholeString().length()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
