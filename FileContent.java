@@ -22,4 +22,12 @@ public class FileContent implements IterableText {
         }
         return null;
     }
+
+    public Iterator<String> charIterator() {
+        return new CharIterator(this);
+    }
+
+    public Iterator<String> wordIterator() {
+        return new WordIterator(this);
+    }
 }
