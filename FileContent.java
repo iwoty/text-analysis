@@ -34,4 +34,8 @@ public class FileContent implements IterableText {
     public String getFilename() {
         return this.filename;
     }
+
+    public String getWholeString() {
+        return this.fileContent;
+    }
 }
