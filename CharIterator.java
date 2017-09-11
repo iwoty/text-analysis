@@ -19,9 +19,16 @@ public class CharIterator implements Iterator {
             list.add(ileContent.getWholeString().substring(i, i+1));
         }
         return itemsList;
-    }
-
-    private LinkedList<E> getList() {
-        return charList;
+    // }
+    //
+    // private LinkedList<E> getList() {
+    //     return charList;
+    // }
+    public boolean hasNext() {
+        if (index < this.fileContent.getWholeString().length()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
