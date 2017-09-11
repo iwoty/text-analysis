@@ -1,0 +1,10 @@
+
+public class StatisticalAnalysis {
+
+    private Iterator<String> iterator;
+
+    public StatisticalAnalysis(Iterator<String> iterator) {
+        this.iterator = iterator;
+    }
+
+}
