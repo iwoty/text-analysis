@@ -16,4 +16,12 @@ public class WordIterator implements Iterator {
             return false;
         }
     }
+
+    public String next() {
+        if (this.fileContent.getWholeString().hasNext()) {
+            return this.fileContent[index++];
+        } else {
+            return null;
+        }
+    }
 }
