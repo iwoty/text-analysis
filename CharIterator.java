@@ -31,4 +31,12 @@ public class CharIterator implements Iterator {
             return false;
         }
     }
+
+    public String next() {
+        if (hasNext()) {
+            return this.fileContent.getWholeString()[index++];
+        } else {
+            return null;
+        }
+    }
 }
