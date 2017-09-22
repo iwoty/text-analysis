@@ -72,4 +72,14 @@ public class StatisticalAnalysis {
         }
         return definedOccurrences;
     }
+
+    public TreeMap<String, Float> calculateLetterOcc() {
+        TreeMap<String, Float> treeMap = new TreeMap<>();
+        String[] alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+
+        for(String letter : alphabet) {
+            treeMap.put(letter, (float) this.countOf(letter) / (float) this.size() * 100);
+        }
+        return treeMap;
+    }
 }

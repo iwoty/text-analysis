@@ -36,7 +36,7 @@ public class View {
         System.out.format("vowels %%: %s\n", decimal0.format(count));
     }
 
-    public static void printAtoEratio(Float count) {
+    public static void printAtoERatio(Float count) {
         System.out.format("'a:e count ratio' : %s\n", decimal2.format(count));
     }
 

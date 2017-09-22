@@ -27,7 +27,7 @@ public class Application {
             Float vowelsPercentage = ((float)vowelsCount / (float) charCount) * 100f;
             Integer aTOeCount = charAnalysis.countOf(aTOeArray);
             Float aTOeRatio = ((float) charCount /(float)aTOeCount);
-            TreeMap<String, Float> lettersOcc = calculateLetterOcc(charAnalysis);
+            TreeMap<String, Float> lettersOcc = charAnalysis.calculateLetterOcc();
 
             View.printFileName(args[i]);
             View.printCharactersInFile(charCount);
@@ -38,7 +38,7 @@ public class Application {
             View.printWordOccurency("hate", hateCount);
             View.printWordOccurency("music", musicCount);
             View.printVowelsPercentage(vowelsPercentage);
-            View.printAtoEratio(aTOeRatio);
+            View.printAtoERatio(aTOeRatio);
             View.printLettersUsage(lettersOcc);
         }
 
@@ -46,15 +46,5 @@ public class Application {
         Long elapsedTime = (stopTime - startTime);
         Float elapsedSeconds = elapsedTime.floatValue() / 1000;
         View.printElapsedTime(elapsedSeconds);
-    }
-
-    public static TreeMap<String, Float> calculateLetterOcc(StatisticalAnalysis analysis) {
-        TreeMap<String, Float> treeMap = new TreeMap<>();
-        String[] alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-
-        for(String letter : alphabet) {
-            treeMap.put(letter, (float) analysis.countOf(letter) / (float) analysis.size() * 100);
-        }
-        return treeMap;
     }
 }
