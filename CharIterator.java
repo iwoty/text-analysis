@@ -1,42 +1,36 @@
+import java.util.ArrayList;
 
-import java.util.LinkedList;
+import java.util.Iterator;
 
-public class CharIterator implements Iterator {
+public class CharIterator implements Iterator<String>{
 
-    private int index;
-    private FileContent fileContent;
-    private LinkedList<E> charList;
+        ArrayList<String> characterList = new ArrayList<>();
+        int index = 0;
 
-    public CharIterator(FileContent content) {
-        this.fileContent = fileContent;
-        charList = new LinkedList<>();
-        index = 0;
-    }
+        public CharIterator (FileContent content) {
 
-    private LinkedList<E> getList() {
-        LinkedList<String> list = new LinkedList<Character>();
-        for (int i=0; i<fileContent.getWholeString().length(); i++) {
-            list.add(ileContent.getWholeString().substring(i, i+1));
+            for (String word : content.getContent()) {
+                for (Character character : word.toCharArray()) {
+                    characterList.add(character.toString());
+                }
+            }
         }
-        return itemsList;
-    // }
-    //
-    // private LinkedList<E> getList() {
-    //     return charList;
-    // }
-    public boolean hasNext() {
-        if (index < this.fileContent.getWholeString().length()) {
-            return true;
-        } else {
+
+        public boolean hasNext() {
+
+            while(index < characterList.size()) {
+
+                return true;
+
+            }
+            index = 0;
             return false;
         }
-    }
 
-    public String next() {
-        if (hasNext()) {
-            return this.fileContent.getWholeString()[index++];
-        } else {
+        public String next() {
+            if (hasNext()) {
+                return characterList.get(index++);
+            }
             return null;
         }
-    }
 }

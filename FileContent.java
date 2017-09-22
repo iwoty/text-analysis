@@ -1,41 +1,40 @@
 
-import java.io.File;
 import java.util.Scanner;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 
 public class FileContent implements IterableText {
+    ArrayList<String> content = new ArrayList<>();
 
-    private String filename;
-    private String fileContent;
-
-    public FileContent(String filename) {
-        this.filename = filename;
-        this.fileContent = getFileContent(filename);
+    public ArrayList<String> getContent() {
+        return content;
     }
 
-    public static String getFileContent(String filename) {
+    public FileContent (String filename) {
+        File file = new File(filename);
         try {
-            String fileContent = new Scanner(new File(filename)).useDelimiter("\\Z").next();
-            return fileContent;
+            Scanner reader = new Scanner(file);
+            while (reader.hasNext()) {
+                String word = reader.next();
+                content.add(word.toLowerCase());
+
+            }
         } catch (FileNotFoundException e) {
-            System.out.format("File %s not found\n", filename);
+            System.out.println("Did not find file: " +filename);
         }
-        return null;
+
+
     }
 
     public Iterator<String> charIterator() {
         return new CharIterator(this);
+
     }
 
     public Iterator<String> wordIterator() {
         return new WordIterator(this);
-    }
-
-    public String getFilename() {
-        return this.filename;
-    }
-
-    public String getWholeString() {
-        return this.fileContent;
     }
 }

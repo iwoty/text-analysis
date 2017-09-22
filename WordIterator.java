@@ -1,27 +1,27 @@
 
-public class WordIterator implements Iterator {
+import java.util.Iterator;
+import java.util.ArrayList;
 
-    private int index;
-    private FileContent fileContent;
+public class WordIterator implements Iterator<String> {
+    ArrayList<String> wordList;
+    int index = 0;
 
     public WordIterator(FileContent fileContent) {
-        this.fileContent = fileContent;
-        index = 0;
+        wordList = new ArrayList<>(fileContent.getContent());
     }
 
     public boolean hasNext() {
-        if (index < this.fileContent.getWholeString().length()) {
+        while(index < wordList.size()) {
             return true;
-        } else {
-            return false;
         }
+        index = 0;
+        return false;
     }
 
     public String next() {
-        if (this.fileContent.getWholeString().hasNext()) {
-            return this.fileContent[index++];
-        } else {
-            return null;
+        if (hasNext()) {
+            return wordList.get(index++);
         }
+        return null;
     }
 }

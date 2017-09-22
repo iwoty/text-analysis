@@ -1,0 +1,7 @@
+./IterableText.java
+./Application.java
+./WordIterator.java
+./FileContent.java
+./CharIterator.java
+./View.java
+./StatisticalAnalysis.java
