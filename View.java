@@ -28,16 +28,8 @@ public class View {
         System.out.format("Most used words (>1%%): %s\n", set);
     }
 
-    public static void printLoveOcc(Integer count) {
-        System.out.format("'love' count: %s\n", count);
-    }
-
-    public static void printHateOcc(Integer count) {
-        System.out.format("'hate' count: %s\n", count);
-    }
-
-    public static void printMusicOcc(Integer count) {
-        System.out.format("'music' count: %s\n", count);
+    public static void printWordOccurency(String word, Integer count) {
+        System.out.format("'%s' count: %s\n", word, count);
     }
 
     public static void printVowelsPercentage(Float count) {
@@ -56,6 +48,6 @@ public class View {
     }
 
     public static void printElapsedTime(Float elapsedTime) {
-        System.out.format("Benchmark time: %s secs\n", elapsedTime/1000);
+        System.out.format("Benchmark time: %s secs\n", elapsedTime);
     }
 }

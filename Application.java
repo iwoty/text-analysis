@@ -34,9 +34,9 @@ public class Application {
             View.printWordsInFile(wordCount);
             View.printDicSize(dicSize);
             View.printMostUsedWords(mostUsedWords);
-            View.printLoveOcc(loveCount);
-            View.printHateOcc(hateCount);
-            View.printMusicOcc(musicCount);
+            View.printWordOccurency("love", loveCount);
+            View.printWordOccurency("hate", hateCount);
+            View.printWordOccurency("music", musicCount);
             View.printVowelsPercentage(vowelsPercentage);
             View.printAtoEratio(aTOeRatio);
             View.printLettersUsage(lettersOcc);
@@ -44,7 +44,8 @@ public class Application {
 
         Long stopTime = System.currentTimeMillis();
         Long elapsedTime = (stopTime - startTime);
-        View.printElapsedTime(elapsedTime.floatValue());
+        Float elapsedSeconds = elapsedTime.floatValue() / 1000;
+        View.printElapsedTime(elapsedSeconds);
     }
 
     public static TreeMap<String, Float> calculateLetterOcc(StatisticalAnalysis analysis) {
