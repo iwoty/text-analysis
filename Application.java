@@ -16,7 +16,7 @@ public class Application {
 
             Integer charCount = charAnalysis.countOf(alphabet);
             Integer wordCount = wordAnalysis.size();
-            Integer dicSize = wordAnalysis.dictionarySize();
+            Integer dictSize = wordAnalysis.dictionarySize();
             Integer countOnePercent = wordAnalysis.size()/100;
             TreeSet<String> mostUsedWords = new TreeSet<>(wordAnalysis.occurMoreThan(countOnePercent));
 
@@ -32,7 +32,7 @@ public class Application {
             View.printFileName(args[i]);
             View.printCharactersInFile(charCount);
             View.printWordsInFile(wordCount);
-            View.printDicSize(dicSize);
+            View.printDictSize(dictSize);
             View.printMostUsedWords(mostUsedWords);
             View.printWordOccurency("love", loveCount);
             View.printWordOccurency("hate", hateCount);

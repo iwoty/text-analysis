@@ -20,7 +20,7 @@ public class View {
         System.out.format("Word count: %s\n", count);
     }
 
-    public static void printDicSize(Integer count) {
+    public static void printDictSize(Integer count) {
         System.out.format("Dict size: %s\n", count);
     }
 
