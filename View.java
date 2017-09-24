@@ -12,16 +12,8 @@ public class View {
         System.out.format("==%s==\n", fileName);
     }
 
-    public static void printCharactersInFile(Integer count) {
-        System.out.format("Char count: %s\n", count);
-    }
-
-    public static void printWordsInFile(Integer count) {
-        System.out.format("Word count: %s\n", count);
-    }
-
-    public static void printDictSize(Integer count) {
-        System.out.format("Dict size: %s\n", count);
+    public static void printCount(String dataKind, Integer count) {
+        System.out.format("%s: %s\n", dataKind, count);
     }
 
     public static void printMostUsedWords(TreeSet<String> set) {

@@ -55,13 +55,13 @@ public class StatisticalAnalysis {
     public Set<String> occurMoreThan(Integer count) {
         TreeMap<String, Integer> allOccurrences = new TreeMap<>();
         TreeSet<String> definedOccurrences = new TreeSet<>();
+
         while(iterator.hasNext()) {
             String nextElem = iterator.next();
             if (allOccurrences.containsKey(nextElem)) {
                 allOccurrences.put(nextElem, allOccurrences.get(nextElem) + 1);
             } else {
-
-            allOccurrences.put(nextElem, 1);
+                allOccurrences.put(nextElem, 1);
             }
         }
 

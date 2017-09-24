@@ -30,7 +30,7 @@ public class FileContent implements IterableText {
 
             }
         } catch (FileNotFoundException e) {
-            System.out.println("Did not find file: " +filename);
+            System.out.format("File not found: %s\n",filename);
         }
     }
 }
